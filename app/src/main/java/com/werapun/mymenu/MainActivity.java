@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -57,11 +58,35 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String  itemValue    = (String) mListView.getItemAtPosition(position);
+
+                mDrawerLayout.closeDrawers();
                 Toast.makeText(getApplicationContext(),
                         "Position :"+ position+"  ListItem : " +itemValue , Toast.LENGTH_SHORT)
                         .show();
             }
         });
+
+
+        // ========== Custom list view =======
+        int[] resId = { R.drawable.one, R.drawable.two, R.drawable.three  };
+
+        String[] list = { "one", "Barret Wallace", "Cait Sith"  };
+
+
+        CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(), list, resId);
+
+        ListView listView = (ListView)findViewById(R.id.listView1);
+        listView.setAdapter(customAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long row_id) {
+                TextView textView = (TextView)view.findViewById(R.id.textView1);
+                System.out.println( textView.getText());
+                Toast.makeText(getApplicationContext(), "Clicked on item:" +  position , Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
 
     @Override
