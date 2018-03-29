@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String [] mDrawerTitle = {"File", "Load...", "Open", "Contact"};
+    private String [] mDrawerTitle = {"หน้าแรก", "การเลี้ยงดู", "อาหาร", "เกี่ยวกับเรา"};
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private ListView mListView;
@@ -68,9 +68,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         // ========== Custom list view =======
-        int[] resId = { R.drawable.one, R.drawable.two, R.drawable.three  };
+        int[] resId = { R.drawable.a, R.drawable.b, R.drawable.c,R.drawable.d,R.drawable.e,R.drawable.f};
 
-        String[] list = { "one", "Barret Wallace", "Cait Sith"  };
+        String[] list = { "DOG", "CAT", "RABBIT","BIRD","DUCK","COW"  };
 
 
         CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(), list, resId);

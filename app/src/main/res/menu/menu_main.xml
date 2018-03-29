@@ -17,7 +17,7 @@
 
     <item
         android:id="@+id/mnuAbout"
-        android:icon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/g"
         app:showAsAction="ifRoom|withText"
         android:title="Contact" />
     <item
